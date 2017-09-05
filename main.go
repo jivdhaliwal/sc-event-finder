@@ -171,6 +171,11 @@ func main() {
 		return
 	}
 
+	if len(os.Args) <= 1 {
+		fmt.Println("Enter Soundcloud username as first argument")
+		return
+	}
+
 	userName := os.Args[1]
 
 	user, err := getSCUser(userName)
