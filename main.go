@@ -171,7 +171,9 @@ func main() {
 		return
 	}
 
-	user, err := getSCUser("nocks")
+	userName := os.Args[1]
+
+	user, err := getSCUser(userName)
 
 	if err != nil {
 		fmt.Println(err)
