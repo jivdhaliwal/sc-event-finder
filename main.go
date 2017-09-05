@@ -161,6 +161,16 @@ func getEvents(followingsList []SCUser) <-chan SKEvent {
 }
 
 func main() {
+	if len(os.Getenv("SONGKICK_API_KEY")) == 0 {
+		fmt.Println("Songkick API Key missing")
+		return
+	}
+
+	if len(os.Getenv("SOUNDCLOUD_API_KEY")) == 0 {
+		fmt.Println("Soundcloud API Key missing")
+		return
+	}
+
 	user, err := getSCUser("nocks")
 
 	if err != nil {
